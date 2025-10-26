@@ -55,7 +55,9 @@ const startServer = async () => {
       process.exit(1);
     }
 
-    const PORT = process.env.PORT || ENV.PORT || 3000; // ⚙️ compatível com Railway
+   const PORT = Number(process.env.PORT) || Number(ENV.PORT) || 3000;
+
+// ⚙️ compatível com Railway
     app.listen(PORT, "0.0.0.0", () => {
       console.log(`🚀 Server running on port ${PORT}`);
       console.log(`📝 Environment: ${ENV.NODE_ENV}`);
